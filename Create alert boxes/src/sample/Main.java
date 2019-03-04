@@ -21,7 +21,10 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         window = primaryStage;
         btn = new Button("Open new window");
-        btn.setOnAction(e -> AlertBox.display("AlertBox", "Close it before you left"));
+        btn.setOnAction(e -> {
+            boolean ans = ConfirmBox.display("ConfirmBox", "Do you want to send back result?");
+            System.out.println(ans);
+        });
 
         window.setTitle("Alert boxes demo");
 
